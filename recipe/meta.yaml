@@ -10,7 +10,7 @@ source:
   sha256: d9aa5014e47b5d329de27b2ea2c6a7452ffc0781cf80a539e718ffa11fa74a46
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - {{ PYTHON }} -c "import shutil as s, os; s.rmtree('examples'); os.unlink('pyproject.toml')"
