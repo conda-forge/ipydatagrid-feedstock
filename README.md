@@ -36,6 +36,7 @@ Installing `ipydatagrid` from the `conda-forge` channel can be achieved by addin
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `ipydatagrid` can be installed with:
@@ -117,5 +118,4 @@ Feedstock Maintainers
 * [@bollwyvl](https://github.com/bollwyvl/)
 * [@ibdafna](https://github.com/ibdafna/)
 * [@kaiayoung](https://github.com/kaiayoung/)
-* [@mbektasbbg](https://github.com/mbektasbbg/)
 
