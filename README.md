@@ -118,5 +118,4 @@ Feedstock Maintainers
 * [@bollwyvl](https://github.com/bollwyvl/)
 * [@ibdafna](https://github.com/ibdafna/)
 * [@kaiayoung](https://github.com/kaiayoung/)
-* [@mbektasbbg](https://github.com/mbektasbbg/)
 
