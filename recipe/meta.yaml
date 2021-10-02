@@ -1,5 +1,5 @@
 {% set name = "ipydatagrid" %}
-{% set version = "1.1.5" %}
+{% set version = "1.1.6" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0f1ec83dbd8ccaca0bfb3b351e54673e7c47102c43737b1eb0d49a15032d1477
+  sha256: ea7a207f22987edf61a603979497e93d20fd44572af49627d58bc31c5e403f51
 
 build:
   number: 0
