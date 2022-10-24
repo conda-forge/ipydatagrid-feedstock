@@ -15,6 +15,7 @@ build:
 
 requirements:
   host:
+    - hatch-jupyter-builder >=0.8.1
     - hatchling
     - pip
     - python >=3.7
