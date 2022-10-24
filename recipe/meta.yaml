@@ -1,32 +1,32 @@
-{% set name = "ipydatagrid" %}
-{% set version = "1.1.12" %}
+{% set version = "1.1.13" %}
 
 package:
-  name: {{ name }}
+  name: ipydatagrid
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a4a072c3db6292a751942b8fa7ca76f06694542a31c2dccfbc94934c74846b5a
+  url: https://pypi.io/packages/source/i/ipydatagrid/ipydatagrid-{{ version }}.tar.gz
+  sha256: a051950410c63b5d60d15645bd5b574c3c0623dd1709ab61b72dbcecfb9d66ac
 
 build:
   number: 0
   noarch: python
-  script:
-    - {{ PYTHON }} -c "import shutil as s, os; s.rmtree('examples'); os.unlink('pyproject.toml')"
-    - {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
-    - jupyter-packaging
+    - hatch-jupyter-builder >=0.8.1
+    - hatchling
+    - jupyterlab >=3,<4
     - pip
-    - python >=3.6
+    - python >=3.7
+    - yarn <2
   run:
     - bqplot >=0.11.6
-    - ipywidgets >=7.6.0,<8
+    - ipywidgets >=7.6.0,<9
     - pandas
     - py2vega >=0.5.0
-    - python >=3.6
+    - python >=3.7
 
 test:
   imports:
@@ -34,17 +34,20 @@ test:
   commands:
     - pip check
     - jupyter labextension list
-    - jupyter labextension list 1>lab_extensions 2>&1  # [unix]
-    - cat lab_extensions | grep "ipydatagrid.*{{ version.replace(".", "\\.") }}.*OK"  # [unix]
+    - jupyter labextension list 1>lab_extensions 2>&1
+    - grep -iE "ipydatagrid.*{{ version.replace(".", "\\.") }}.*OK" lab_extensions
   requires:
-    - pip
     - jupyterlab >=3,<4
+    - m2-grep  # [win]
+    - pip
 
 about:
   home: https://github.com/bloomberg/ipydatagrid
   summary: Fast Datagrid widget for the Jupyter Notebook and JupyterLab
   license: BSD-3-Clause
-  license_file: LICENSE.txt
+  license_file:
+    - LICENSE.txt
+    - ipydatagrid/labextension/static/third-party-licenses.json
 
 extra:
   recipe-maintainers:
