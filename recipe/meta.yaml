@@ -19,6 +19,7 @@ requirements:
     - hatchling
     - pip
     - python >=3.7
+    - yarn <2
   run:
     - bqplot >=0.11.6
     - ipywidgets >=7.6.0,<9
