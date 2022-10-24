@@ -17,6 +17,7 @@ requirements:
   host:
     - hatch-jupyter-builder >=0.8.1
     - hatchling
+    - jupyterlab >=3,<4
     - pip
     - python >=3.7
     - yarn <2
@@ -44,7 +45,9 @@ about:
   home: https://github.com/bloomberg/ipydatagrid
   summary: Fast Datagrid widget for the Jupyter Notebook and JupyterLab
   license: BSD-3-Clause
-  license_file: LICENSE.txt
+  license_file:
+    - LICENSE.txt
+    - ipydatagrid/labextension/static/third-party-licenses.json
 
 extra:
   recipe-maintainers:
