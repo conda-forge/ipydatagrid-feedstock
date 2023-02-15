@@ -1,4 +1,4 @@
-{% set version = "1.1.14" %}
+{% set version = "1.1.15" %}
 
 package:
   name: ipydatagrid
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/ipydatagrid/ipydatagrid-{{ version }}.tar.gz
-  sha256: bb11a612d9f78f7926c5f4ec68a7bed99325bde4b0a9950de1dacd868c4ddb79
+  sha256: 4b4da0bf2af03599ae52f5a04d05595c230917a03883b43aa176616979070b53
 
 build:
   number: 0
