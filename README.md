@@ -1,11 +1,11 @@
-About ipydatagrid
-=================
+About ipydatagrid-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ipydatagrid-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/bloomberg/ipydatagrid
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ipydatagrid-feedstock/blob/main/LICENSE.txt)
 
 Summary: Fast Datagrid widget for the Jupyter Notebook and JupyterLab
 
