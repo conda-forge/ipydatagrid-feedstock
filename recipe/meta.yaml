@@ -1,4 +1,4 @@
-{% set version = "1.1.15" %}
+{% set version = "1.1.16" %}
 
 package:
   name: ipydatagrid
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/ipydatagrid/ipydatagrid-{{ version }}.tar.gz
-  sha256: 4b4da0bf2af03599ae52f5a04d05595c230917a03883b43aa176616979070b53
+  sha256: 71b282b05d65a729b22cebf5937a6b465fd9cd3beb1c815cc5fc6fd5690bc33f
 
 build:
   number: 0
@@ -20,7 +20,7 @@ requirements:
     - jupyterlab >=3,<4
     - pip
     - python >=3.7
-    - yarn <2
+    - yarn =3
   run:
     - bqplot >=0.11.6
     - ipywidgets >=7.6.0,<9
@@ -54,3 +54,4 @@ extra:
     - bollwyvl
     - ibdafna
     - kaiayoung
+    - martinRenou
