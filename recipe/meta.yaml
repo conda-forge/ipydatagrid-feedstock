@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/bloomberg/ipydatagrid/archive/{{ version }}.tar.gz
-  sha256: 316aff777129867ffa495995b67e149e293d15f162fcc950f6468b380433cd95
+  sha256: b2f0eaaa299736899ab07760194d3f1b0b1ab8ab55f8aab8e6d22554d26d0de3
 
 build:
   number: 0
