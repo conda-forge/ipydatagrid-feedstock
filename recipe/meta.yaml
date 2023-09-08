@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/i/ipydatagrid/ipydatagrid-{{ version }}.tar.gz
-  sha256: 811e2c3bc7db5636662a51d19f54132ebe0a01c449f49bc8ae1b98b8944b28a6
+  url: https://github.com/bloomberg/ipydatagrid/archive/{{ version }}.tar.gz
+  sha256: 316aff777129867ffa495995b67e149e293d15f162fcc950f6468b380433cd95
 
 build:
   number: 0
