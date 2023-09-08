@@ -1,4 +1,4 @@
-{% set version = "1.1.16" %}
+{% set version = "1.1.17" %}
 
 package:
   name: ipydatagrid
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/ipydatagrid/ipydatagrid-{{ version }}.tar.gz
-  sha256: 71b282b05d65a729b22cebf5937a6b465fd9cd3beb1c815cc5fc6fd5690bc33f
+  sha256: 811e2c3bc7db5636662a51d19f54132ebe0a01c449f49bc8ae1b98b8944b28a6
 
 build:
   number: 0
@@ -17,7 +17,7 @@ requirements:
   host:
     - hatch-jupyter-builder >=0.8.1
     - hatchling
-    - jupyterlab >=3,<4
+    - jupyterlab >=4,<5
     - pip
     - python >=3.7
     - yarn =3
