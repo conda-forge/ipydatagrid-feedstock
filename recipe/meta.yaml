@@ -1,4 +1,4 @@
-{% set version = "1.3.2" %}
+{% set version = "1.4.0" %}
 
 package:
   name: ipydatagrid
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/bloomberg/ipydatagrid/archive/{{ version }}.tar.gz
-  sha256: 102aff4c81af0228431fddc9a7d5e1a0c8d3abc25f1c4d7ff1aaa90e3f2949b7
+  sha256: 30cd9d2394d5dda1a30a1ad7343ecc249e4ad4aa8a515c8401cc3ee09329ee30
 
 build:
   number: 0
