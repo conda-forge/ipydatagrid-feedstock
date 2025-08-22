@@ -29,7 +29,7 @@ requirements:
     - jupyterlab ${{ jupyterlab_host_version }}.*
     - pip
     - python ${{ python_min }}.*
-    - yarn 3.*
+    - nodejs 24.*
   run:
     - bqplot >=0.11.6
     - ipywidgets >=7.6,<9
