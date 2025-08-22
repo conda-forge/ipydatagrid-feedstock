@@ -20,8 +20,6 @@ build:
   number: 2
   noarch: python
   script:
-    - jlpm
-    - jlpm build
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
