@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: 1.4.0
+  # build against the oldest available 4.0.x to avoid spurious `etc/jupyter/labconfig/page_config.json`
+  jupyterlab_host_version: "4.0"
+  # test against the latest supported version
+  jupyterlab_test_version: "4"
+
+package:
+  name: ipydatagrid
+  version: ${{ version }}
+
+source:
+  url: https://github.com/bloomberg/ipydatagrid/archive/${{ version }}.tar.gz
+  sha256: 30cd9d2394d5dda1a30a1ad7343ecc249e4ad4aa8a515c8401cc3ee09329ee30
+
+build:
+  number: 2
+  noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - hatch-jupyter-builder >=0.8.1
+    - hatchling
+    - jupyterlab ${{ jupyterlab_host_version }}.*
+    - pip
+    - python ${{ python_min }}.*
+    - nodejs 24.*
+  run:
+    - bqplot >=0.11.6
+    - ipywidgets >=7.6,<9
+    - pandas >=1.3.5
+    - py2vega >=0.5
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports: ipydatagrid
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - 3.13.*
+  - requirements:
+      run:
+        - jupyterlab ${{ jupyterlab_test_version }}.*
+        - python ${{ python_min }}.*
+    script:
+      - jupyter labextension list --debug 2>&1 | python -c "import sys, re; v = sys.stdin.read(); p = 'ipydatagrid.*v${{ version | replace(".", "\\.") }}.*enabled.*OK'; assert re.search(p, v), f'{v} expected {p} ?'"
+
+about:
+  summary: Fast Datagrid widget for the Jupyter Notebook and JupyterLab
+  license: BSD-3-Clause
+  license_file:
+    - LICENSE.txt
+    - ipydatagrid/labextension/static/third-party-licenses.json
+  homepage: https://github.com/bloomberg/ipydatagrid
+
+extra:
+  recipe-maintainers:
+    - bollwyvl
+    - ibdafna
+    - kaiayoung
+    - martinRenou
