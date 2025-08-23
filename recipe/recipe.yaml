@@ -49,8 +49,7 @@ tests:
         - jupyterlab ${{ jupyterlab_test_version }}.*
         - python ${{ python_min }}.*
     script:
-      - jupyter labextension list --debug
-      - jupyter labextension list --debug 2>&1 | python -c "import sys, re; assert re.search('ipydatagrid.*{{ version.replace(".", "\\.") }}.*OK', sys.stdin.read())"
+      - jupyter labextension list --debug 2>&1 | python -c "import sys, re; v = sys.stdin.read(); p = 'ipydatagrid.*v${{ version | replace(".", "\\.") }}.*enabled.*OK'; assert re.search(p, v), f'{v} expected {p} ?'"
 
 about:
   summary: Fast Datagrid widget for the Jupyter Notebook and JupyterLab
